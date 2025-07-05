@@ -1,0 +1,19 @@
+<div id="stockToLeave"><p>Le paramètre surépaisseur radiale permet de contrôler la quantité de matière à laisser dans le sens radial (perpendiculaire à l'axe de l'outil), c'est-à-dire sur le côté de l'outil.</p>
+<table class="tipTable" cellspacing="10">
+<tr>
+<td><center><img border="0" width="128" height="122" src="../images/117_StockToLeaveRadial.png"/></center></td>
+<td><center><img border="0" width="128" height="122" src="../images/117_StockToLeaveBoth.png"/></center></td>
+</tr><tr>
+<td><center><p><b>Surépaisseur radiale</b></p></center></td>
+<td><center><p><b>Surépaisseur radiale et axiale</b></p></center></td>
+</tr></table>
+<p>Quand une surépaisseur radiale est définie positive, une certaine épaisseur de matière est laissée sur les parois verticales et sur les zones fortement inclinées de la pièce.</p>
+<p>Pour les surfaces qui ne sont pas exactement verticales, le programme effectue une interpolation à partir des valeurs de surépaisseur axiale (sol) et radiale. Aussi la quantité de brut conservé sur ces surfaces dans le sens radial peut-elle être différente de la valeur spécifiée, selon l'inclinaison de la surface et la valeur de la surépaisseur axiale.</p>
+<p>Lorsque vous modifiez la valeur de surépaisseur radiale, la surépaisseur axiale est automatiquement définie sur la même valeur, sauf si vous entrez manuellement une valeur de surépaisseur axiale.</p>
+<p>Pour les opérations de finition, la valeur par défaut est de 0 mm/0 po, ce qui signifie qu'aucune épaisseur de matériau n'est conservée.</p>
+<p>Pour les opérations d'ébauche, le système conserve par défaut une petite quantité de matériau, qui peut ensuite être supprimée par une ou plusieurs opérations de finition.</p>
+<p><b>Surépaisseur négative</b></p>
+<p>Quand une valeur de surépaiseur négative est définie, l'opération d'usinage élimine plus de matière sur le brut qu'il n'est nécessaire pour correspondre à la forme de votre modèle. Cette option peut être utilisée pour l'usinage d'une <b>électrode</b>, l'espace devant séparer les électrodes de la pièce correspondant ici à la valeur négative de la surépaisseur négative.</p>
+<p>Les valeurs de surépaisseurs axiale et radiale peuvent être des nombres négatifs. Cependant, une valeur de surépaisseur radiale négative doit être inférieure au rayon de l'outil.</p>
+<p>Lorsque vous utilisez une fraise boule ou avec un rayon de bout avec une valeur de surépaisseur radiale négative supérieure au rayon de bout d'outil, la valeur de surépaisseur axiale négative doit être inférieure ou égale à la valeur du rayon de bout d'outil.</p>
+</div>

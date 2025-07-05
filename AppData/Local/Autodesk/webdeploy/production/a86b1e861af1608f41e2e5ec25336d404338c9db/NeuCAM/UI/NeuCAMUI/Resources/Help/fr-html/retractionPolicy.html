@@ -1,0 +1,19 @@
+<div id="retractionPolicy"><p>Détermine la façon dont l'outil se déplace entre les passes de coupe.</p>
+<table class="tipTable" cellspacing="10">
+<tr>
+<td><center><img border="0" width="125" height="125" src="../images/retractionPolicy_FullRetraction.png"/></center></td>
+<td><center><img border="0" width="125" height="125" src="../images/retractionPolicy_MinimumRetraction.png"/></center></td>
+<td><center><img border="0" width="125" height="125" src="../images/retractionPolicy_ShortestPath.png"/></center></td>
+</tr><tr>
+<td><center><p><b>Retrait complet</b></p></center></td>
+<td><center><p><b>Retrait minimum</b></p></center></td>
+<td><center><p><b>Chemin le plus court</b></p></center></td>
+</tr></table>
+<p><em>Exemple avec flux</em></p>
+<br>
+<p><b>Retrait complet</b>: permet de rétracter entièrement l'outil selon la valeur du paramètre Hauteur de retrait à la fin de la passe, avant de le positionner au-dessus du début de la passe suivante.</p>
+<p><b>Retrait minimum</b>: permet d'atteindre directement la hauteur minimale à laquelle l'outil usine la pièce de travail, plus toute distance de sécurité spécifiée.</p>
+<p><b>Chemin le plus court</b>: permet de déplacer l'outil sur la distance la plus courte possible en ligne droite entre des trajectoires.</p>
+<p><b>AVERTISSEMENT:</b> l'option Chemin le plus court ne doit pas être utilisée sur des ordinateurs qui ne prennent pas en charge les mouvements linéarisés à grand vitesse où les déplacements G0 sont effectués en ligne droite (par opposition à ceux qui guident l'ensemble des axes à vitesse maximale, parfois appelés déplacements <em>en zigzag</em>). Tout non-respect de cette règle peut entraîner une simulation incorrecte des mouvements de la machine par le logiciel et <i>provoquer des pannes d'outil</i>.</p>
+<p>Pour les machines CNC qui ne prennent pas en charge les mouvements rapides linéarisés, vous pouvez modifier le post-processeur afin de convertir tous les mouvements G0 en mouvements G1 UGV. Contactez l'assistance technique pour en savoir plus sur la façon de modifier les post-processeurs à cet effet.</p>
+</div>

@@ -1,0 +1,21 @@
+<div id="smoothingFilterMode"><p>Spécifie le mode de lissage de la trajectoire d'outil.</p>
+<table class="tipTable" cellspacing="10">
+<tr>
+<td><center><img border="0" width="200" height="189" src="../images/arc_fitting_ss.png"/></center></td>
+<td><center><img border="0" width="200" height="189" src="../images/arc_fitting_ss_applied.png"/></center></td>
+</tr><tr>
+<td><center><p><b>Mode de lissage désactivé</b></p></center></td>
+<td><center><p><b>Mode Ajouter des arcs appliqué</b></p></center></td>
+</tr></table>
+<p><b>Ajouter des arcs</b>: remplace plusieurs lignes dans des zones incurvées par des arcs tout en respectant la tolérance de la trajectoire d'outil. S'il est impossible de respecter la tolérance, les arcs ne sont pas appliqués. L'ajout d'arcs réduit la taille du fichier de code G, ce qui est utile aux machines plus anciennes avec des contrôleurs CNC plus lents qui fonctionnent mieux avec des fichiers de taille réduite.</p>
+
+<table class="tipTable" cellspacing="10">
+<tr>
+<td><center><img border="0" width="400" height="196" src="../images/Evenly_spaced_points_2_SS.png"/></center></td>
+</tr><tr>
+<td><center><p><b>Points espacés régulièrement</b></p></center></td>
+</tr></table>
+<p><b>Points espacés régulièrement</b>: adapté aux machines plus récentes avec des contrôleurs CNC plus rapides qui peuvent prendre en charge un nombre important de points.</p>
+<p><b>1</b>: supprime les anciens points et en ajoute de nouveaux le long des mouvements de découpe, puis les arrange de sorte qu'ils soient espacés régulièrement lorsque cela est possible. L'ajout de points peut augmenter la durée de calcul nécessaire pour générer une trajectoire d'outil, toutefois, en les espaçant régulièrement, la machine-outil est plus rapide.<br></p>
+<p><b>2</b>: les points peuvent être très rapprochés autour des angles afin de respecter la tolérance de la trajectoire d'outil.</p>
+</div>

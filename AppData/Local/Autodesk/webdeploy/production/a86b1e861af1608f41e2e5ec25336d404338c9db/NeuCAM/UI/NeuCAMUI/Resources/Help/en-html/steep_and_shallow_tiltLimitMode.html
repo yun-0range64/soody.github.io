@@ -1,0 +1,25 @@
+<div id="steep_and_shallow_tiltLimitMode"><p>If the tool axis reaches the <b>Maximum Tilt</b> limit, you can choose to:</p>
+<ul>
+<li><b>Trim toolpath</b> - Select to remove the portion of the toolpath that would tilt the tool axis beyond the maximum tilt limit. Use this option if your tool axis angle is critical for your surface finish and then complete machining the part using another Setup.</li>
+<li><b>Machine at maximum tilt</b> - Select to keep the tool axis at the tilt limit upon reaching it. Use this option to continue machining with the toolpath in the current Setup if the tool axis angle is not critical for your surface finish.</li>
+</ul>
+<p>With <b>Trim toolpath</b> selected, for the 90 degrees Maximum Tilt image, nothing is trimmed as the tool axis always stays within 90 degrees. For the 65 degrees Maximum Tilt image, the portion that tilts the tool axis beyond 65 degrees is removed.</p>
+<table class="tipTable" cellspacing="10">
+<tr>
+<td><center><img border="0" width="300" height="173" src="../images/no_tool_axis_limits.png"/></center></td>
+<td><center><img border="0" width="300" height="173" src="../images/trim_toolpath_65deg.png"/></center></td>
+</tr><tr>
+<td><center><p><b>Maximum Tilt = 90 degrees</b><br>
+<b>Trim toolpath</b></p></center></td>
+<td><center><p><b>Maximum Tilt = 65 degrees</b><br>
+<b>Trim toolpath</b></p></center></td>
+</tr></table>
+<p>With <b>Machine at maximum tilt</b> selected, the exceeding toolpath is kept, but the tilt of the tool axis is restricted to machine at 65 degrees.</p>
+<table class="tipTable" cellspacing="10">
+<tr>
+<td><center><img border="0" width="300" height="173" src="../images/machine_at_max_tilt.png"/></center></td>
+</tr><tr>
+<td><center><p><b>Maximum Tilt = 65 degrees</b><br>
+<b>Machine at maximum tilt</b><br></p></center></td>
+</tr></table>
+</div>

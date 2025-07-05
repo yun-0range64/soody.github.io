@@ -1,0 +1,18 @@
+<div id="steep_and_shallow_tiltAngle"><p>Spécifie un angle préféré auquel conserver l'axe d'outil. L<b>angle préféré</b> est mesuré à partir de l'orientation d'outil spécifiée (si vous ne spécifiez pas d'orientation d'outil dans l'onglet Géométrie, l'angle préféré est mesuré à partir de l'axe Z configuré). Dans la mesure du possible, le maintien de l'axe d'outil à un angle constant permet d'obtenir une meilleure finition de la surface et de conserver la vitesse d'avance programmée.</p>
+<p>L'angle préféré peut être considéré comme une limite conique autour de l'orientation d'outil spécifiée.</p>
+<table class="tipTable" cellspacing="10">
+<tr>
+<td><center><img border="0" width="301" height="170" src="../images/preferred_angle_measurement.png"/></center></td>
+</tr><tr>
+<td><center><p><b>Angle préféré</b> mesuré à partir de l'axe Z de l'orientation de l'outil</p></center></td>
+</tr></table>
+<p>Pour déterminer l'emplacement de l'outil sur la limite conique, les paramètres <b>Mode principal</b>' non verticaux fournissent une direction d'inclinaison initiale à l'outil, comme ce serait le cas si vous n'utilisiez pas l'option ''Remplacer l'angle d'inclinaison''. À partir de la direction d'inclinaison initiale, l'axe d'outil se déplace pour s'aligner à l'arête de la limite dont il est le plus proche.</p>
+<table class="tipTable" cellspacing="10">
+<tr>
+<td><center><img border="0" width="240" height="250" src="../images/tilt_override_initial_position.png"/></center></td>
+<td><center><img border="0" width="230" height="250" src="../images/tilt_override_lock_onto_boundary.png"/></center></td>
+</tr><tr>
+<td><center><p>Direction d'inclinaison initiale</p></center></td>
+<td><center><p>Arête de limite conique la plus proche</p></center></td>
+</tr></table>
+</div>

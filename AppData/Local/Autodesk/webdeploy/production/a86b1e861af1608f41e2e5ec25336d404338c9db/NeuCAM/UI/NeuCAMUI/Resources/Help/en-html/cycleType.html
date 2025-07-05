@@ -1,0 +1,59 @@
+<div id="cycleType"><p>Selecting the type of drilling cycle changes which parameters can be used for the drilling operation. Shown with the common industry G-Code.<br></p>
+<ul>
+<li><b>Drilling</b>: Feed to Depth & Rapid Out - For holes with depths of less than 3x the tool diameter. (G81)<br></li>
+</ul>
+<ul>
+<li><b>Counterboring</b>: Feed to Depth, Dwell, Rapid Out - A dwell is used to improve the bottom finish of a hole. (G82)<br></li>
+</ul>
+<ul>
+<li><b>Chip breaking</b>: Uses multiple pecks that periodically retracting the tool to break the chips and/or allow coolant to enter the hole. For holes with depths more than three times the tool diameter. (G73)<br></li>
+</ul>
+<ul>
+<li><b>Deep drilling</b>: Similar to Chip breaking, but retracts completely out of the hole to clear chips and/or flood the hole with coolant. Also known as Peck drilling. (G83)<br></li>
+</ul>
+<ul>
+<li><b>Break through</b>: Allows for reduced feed and speed before breaking through a hole.<br></li>
+</ul>
+<ul>
+<li><b>Guided deep drilling</b>: A gun drill has a single cutting edge. Guide pads burnish the hole to produces a straight, deep hole with a precision diameter.</li>
+</ul>
+<ul>
+<li><b>Tapping</b>: Taps right or left handed threads depending on the selected tool.<br></li>
+</ul>
+<ul>
+<li><b>Left tapping</b>: Feed to Depth, Reverse the spindle, Feed Out - Rotates counterclockwise as it enters the hole to cut a thread. (G74)<br></li>
+</ul>
+<ul>
+<li><b>Right tapping</b>: Feed to Depth, Reverse the spindle, Feed Out - Rotates clockwise as it enters the hole to cut a thread. (G84)<br></li>
+</ul>
+<ul>
+<li><b>Tapping with chip breaking</b>: Feeds in and out multiple times, going deeper each time, until it reaches the final depth.<br></li>
+</ul>
+<ul>
+<li><b>Reaming</b>: Feed to Depth and immediately Feed Out upon reaching the final depth. (G85)<br></li>
+</ul>
+<ul>
+<li><b>Boring</b>: Feed to Depth, Dwell, Feed Out. (G86)<br></li>
+</ul>
+<ul>
+<li><b>Stop boring</b>: Feed to Depth, Stop the spindle, Rapid Out. (G87)<br></li>
+</ul>
+<ul>
+<li><b>Fine boring</b>: Feed to Depth, Stop the spindle, Shift from the wall, Rapid Out. (G76)<br></li>
+</ul>
+<ul>
+<li><b>Back-boring</b>: Boring from the back of an existing hole. (G77)<br></li>
+</ul>
+<ul>
+<li><b>Circular pocket milling</b>: This can be used to call a custom cycle for circular pocketing.<br></li>
+</ul>
+<ul>
+<li><b>Bore milling</b>: This can be used to call a custom cycle for helical bore milling.<br></li>
+</ul>
+<ul>
+<li><b>Thread milling</b>: This can be used to call a custom cycle for helical thread milling.<br></li>
+</ul>
+<ul>
+<li><b>Probe</b>: Used to call a probe tool macro from the machine. <b>Requires a custom post processors.</b> <em>See the advanced Probing function, under the Setup pull down.</em><br></li>
+</ul>
+</div>

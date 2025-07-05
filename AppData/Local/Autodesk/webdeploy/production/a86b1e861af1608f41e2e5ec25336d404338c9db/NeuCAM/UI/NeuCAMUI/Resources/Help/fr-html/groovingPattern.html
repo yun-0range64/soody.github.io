@@ -1,0 +1,16 @@
+<div id="groovingPattern"><p>Spécifie la stratégie utilisée pour créer la trajectoire d'outil de la rainure. La géométrie tournée, la matière de la pièce, ainsi que le type d'insert de rainurage et de porte-outil à utiliser déterminent l'option la plus adaptée.</p>
+<table class="tipTable" cellspacing="10">
+<tr>
+<td><center><img border="0" width="150" height="144" src="../images/GroovingPattern1.png"/></center></td>
+<td><center><img border="0" width="150" height="144" src="../images/GroovingPattern2.png"/></center></td>
+<td><center><img border="0" width="150" height="144" src="../images/GroovingPattern3.png"/></center></td>
+</tr><tr>
+<td><center><p><b>Pas en Z complet</b></p></center></td>
+<td><center><p><b>Pas en Z partiel</b></p></center></td>
+<td><center><p><b>Latéral avec<br>pas en Z partiel</b></p></center></td>
+</tr></table>
+<p><b>Pas en Z complet</b>: supprime toute la matière de manière radiale, avant de se déplacer le long de l'axe de la broche pour supprimer la quantité suivante. Le nombre de pas effectués à chaque fois par l'outil est contrôlé par la valeur <b>Recouvrement de rainurage maximum</b>.</p>
+<p><b>Pas en Z partiel</b>: supprime toute la matière le long de l'axe de la broche avant de commencer à supprimer la matière à la profondeur suivante spécifiée par la valeur <b>Pas en Z de rainurage maximal</b>.</p>
+<p><b>Latéral avec pas en Z partiel</b>: pour certaines matières, il est préférable de rainurer d'un côté à l'autre, car l'opération génère de plus petits copeaux et augmente la durée de vie de l'outil. Par exemple, si la rainure est plus large que profonde, cette option peut accélérer la suppression de la matière par rapport aux options <b>Pas en Z complet</b> ou <b>Pas en Z partiel</b>.
+<b>Astuce</b>: dans un cas tel que celui-ci, utilisez l'option <b>Dans les deux sens</b> disponible dans le menu déroulant <b>Direction</b> de l'onglet <b>Outil</b>, comme illustré dans l'image ci-dessus.</p>
+</div>

@@ -1,0 +1,16 @@
+<div id="steep_and_shallow_tiltToolMode"><p>Définit la direction d'inclinaison de l'outil lors de l'évitement d'une collision.</p>
+<p><b>Automatique</b>: sélectionne automatiquement la direction d'inclinaison de l'outil pour l'éloigner de la pièce jusqu'à éviter la collision. Utile pour les pièces avec beaucoup de fonctions, mais peut nécessiter plus de temps pour calculer la trajectoire d'outil. Disponible uniquement lorsque l'option <b>Mode principal</b> est définie sur <b>Vertical</b> pour l'axe d'outil.</p>
+<table class="tipTable" cellspacing="10">
+<tr>
+<td><center><img border="0" width="250" height="239" src="../images/avoidance-automatic.png"/></center></td>
+</tr><tr>
+<td><center></center></td>
+</tr></table>
+<p>Pour les pièces plus simples, les options <b>A</b> et <b>Depuis</b> permettent de simplifier le mouvement des axes d'outil et d'accélérer le calcul de la trajectoire d'outil.</p>
+<p>Lors de l'évitement d'une collision:</p>
+<p><b>Depuis un point</b>: incline la pointe de l&apos;outil dans une direction qui l&apos;éloigne d&apos;un point.<br>
+<b>Vers un point</b>: incline la pointe de l'outil dans une direction visant un point.<br>
+<b>Depuis une courbe</b>: incline la pointe de l'outil depuis une courbe.<br>
+<b>Vers une courbe</b>: incline la pointe de l'outil dans une direction visant une courbe.</p>
+<p><b>Remarque</b>: si l'outil doit s'incliner au-delà de la limite <b>Inclinaison maximum</b> définie pour l'axe d'outil afin d'éviter une collision, cette partie de la trajectoire d'outil est supprimée.</p>
+</div>

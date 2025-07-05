@@ -1,0 +1,16 @@
+<div id="dwellingPeriod"><p>Durée de temporisation en secondes.</p>
+<p>La spécification d'une durée de temporisation interrompt tous les mouvements d'axe pour une durée déterminée et laisse la broche poursuivre sa rotation à la vitesse définie. Cette option permet d'assurer l'élimination des copeaux avant le retrait du foret et d'améliorer la finition d'un perçage.</p>
+<p>Une durée de temporisation comprise entre 1/4 de seconde et 1 seconde est généralement suffisante.</p>
+<p>Exemple: pour définir une temporisation de 1/4 de seconde, saisissez 0.25 ou 1/4 dans ce champ.</p>
+<p>Lors du post-traitement d'un cycle de perçage, la durée de temporisation est définie comme un paramètre du cycle de perçage (généralement P) et, dans la plupart des cas, est indiquée en millisecondes (ms).</p>
+<table class="tipTable" cellspacing="10">
+<tr>
+<td><center><img border="0" width="361" height="55" src="../images/dwellingPeriod.png"/></center></td>
+</tr><tr>
+<td><center><p>Durée de temporisation de 250 ms en G82</p></center></td>
+</tr></table>
+<p>Lors d'un post-traitement à l'aide de cycles développés, la durée de temporisation apparaît sous forme de commande classique de temporisation (G4).</p>
+<p>Pour calculer la durée de temporisation minimale permettant au moins une révolution complète, utilisez une valeur de 60 et divisez-la par la vitesse de broche.</p>
+<p>Exemple: à 350 000 tr/min, la durée de temporisation minimale est égale à 60/350 = 0,171 s, ce qui peut être arrondi à 0,2 s.</p>
+<p>Remarque: si l'opérateur utilise le programme avec une vitesse ajustée, la vitesse de broche est plus faible, mais la durée de temporisation reste constante. Pour assurer qu'une révolution complète est effectuée lorsque vous utilisée une vitesse ajustée à 50 %, par exemple, la durée de temporisation doit être doublée.</p>
+</div>

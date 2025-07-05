@@ -1,0 +1,25 @@
+<div id="steep_and_shallow_tiltLimitMode"><p>Si l'axe d'outil atteint la limite <b>Inclinaison maximum</b>, vous pouvez choisir l'action suivante:</p>
+<ul>
+<li>'''Ajuster la trajectoire d'outil''': sélectionnez cette option pour supprimer la partie de la trajectoire d'outil pouvant incliner l'axe d'outil au-delà de la limite d'inclinaison maximum. Utilisez cette option si l'angle de l'axe d'outil est nécessaire pour la finition de la surface, puis finalisez l'usinage de la pièce à l'aide d'une autre configuration.</li>
+<li>'''Usiner à l'inclinaison maximum''': sélectionnez cette option pour conserver l'axe outil à l'inclinaison limite lorsque cette dernière est atteinte. Utilisez cette option pour continuer l'usinage de la trajectoire d'outil dans la configuration actuelle si l'angle de l'axe d'outil n'est pas nécessaire pour la finition de la surface.</li>
+</ul>
+<p>Lorsque l'option '''Ajuster la trajectoire d'outil''' est sélectionnée, pour l'image d'inclinaison maximum de 90 degrés, aucun élément n'est ajusté, car l'axe d'outil reste toujours à 90 degrés. Pour l'image d'inclinaison maximum de 65 degrés, la partie qui incline l'axe d'outil au-delà de 65 degrés est supprimée.</p>
+<table class="tipTable" cellspacing="10">
+<tr>
+<td><center><img border="0" width="300" height="173" src="../images/no_tool_axis_limits.png"/></center></td>
+<td><center><img border="0" width="300" height="173" src="../images/trim_toolpath_65deg.png"/></center></td>
+</tr><tr>
+<td><center><p><b>Inclinaison maximum = 90 degrés</b><br>
+'''Ajuster la trajectoire d'outil'''</p></center></td>
+<td><center><p><b>Inclinaison maximum = 65 degrés</b><br>
+'''Ajuster la trajectoire d'outil'''</p></center></td>
+</tr></table>
+<p>Lorsque l'option '''Usiner à l'inclinaison maximum''' est sélectionnée, la trajectoire d'outil qui dépasse est conservée, mais l'inclinaison de l'axe d'outil est limitée à l'usinage à 65 degrés.</p>
+<table class="tipTable" cellspacing="10">
+<tr>
+<td><center><img border="0" width="300" height="173" src="../images/machine_at_max_tilt.png"/></center></td>
+</tr><tr>
+<td><center><p><b>Inclinaison maximum = 65 degrés</b><br>
+'''Usiner à l'inclinaison maximum'''<br></p></center></td>
+</tr></table>
+</div>

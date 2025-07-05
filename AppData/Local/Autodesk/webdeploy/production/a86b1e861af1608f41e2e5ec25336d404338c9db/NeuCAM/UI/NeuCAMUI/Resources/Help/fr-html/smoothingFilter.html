@@ -1,0 +1,12 @@
+<div id="smoothingFilter"><p>Lisse la trajectoire d'outil en supprimant les points superflus et en ajustant les arcs lorsque la tolérance de filtrage le permet.</p>
+<table class="tipTable" cellspacing="10">
+<tr>
+<td><center><img border="0" width="200" height="200" src="../images/SmoothingOff.png"/></center></td>
+<td><center><img border="0" width="200" height="200" src="../images/SmoothingOn.png"/></center></td>
+</tr><tr>
+<td><center><p><b>Lisage désactivé</b></p></center></td>
+<td><center><p><b>Lissage activé</b></p></center></td>
+</tr></table>
+<p>Le lissage permet de réduire la taille du code sans sacrifier la précision. Il consiste à remplacer les segments colinéaires par une seule courbe et des arcs tangents afin de réduire le nombre de lignes dans les zones courbes.</p>
+<p>Les effets du lissage peuvent être considérables. La taille du fichier de code G peut être réduite de plus de 50 %. La machine se déplace plus rapidement et de manière plus fluide, permettant une meilleure finition de surface. La quantité de réduction de code dépend de l'adéquation de la trajectoire d'outil au lissage. Pour les trajectoires qui se limitent principalement à un plan principal (XY, YZ ou XZ), comme les trajectoires parallèles, le filtrage offre de bons résultats. Pour les autres, par exemple dans le cas de crêtes 3D, la réduction de code est moins importante.</p>
+</div>

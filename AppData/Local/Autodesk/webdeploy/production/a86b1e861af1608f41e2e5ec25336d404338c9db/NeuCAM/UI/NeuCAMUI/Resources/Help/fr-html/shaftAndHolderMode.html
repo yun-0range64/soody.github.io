@@ -1,0 +1,23 @@
+<div id="shaftAndHolderMode"><p>Définit la façon dont la trajectoire d'outil doit traiter une collision du corps et/ou du porte-outil avec la pièce de travail.</p>
+<table class="tipTable" cellspacing="10">
+<tr>
+<td><center><img border="0" width="100" height="100" src="../images/shaftAndHolderMode_Disabled.png"/></center></td>
+<td><center><img border="0" width="100" height="100" src="../images/shaftAndHolderMode_Trimmed.png"/></center></td>
+</tr><tr>
+<td><center><p><b>Désactivé</b></p></center></td>
+<td><center><p><b>Ajusté</b></p></center></td>
+</tr></table>
+<br>
+<table class="tipTable" cellspacing="10">
+<tr>
+<td><center><img border="0" width="100" height="100" src="../images/shaftAndHolderMode_PullAway.png"/></center></td>
+<td><center><img border="0" width="100" height="100" src="../images/shaftAndHolderMode_DetectLenght.png"/></center></td>
+</tr><tr>
+<td><center><p><b>Eloigner</b></p></center></td>
+<td><center><p><b>Détecter la longueur d'outil</b></p></center></td>
+</tr></table>
+<p><b>Ajusté</b>: les portions de la trajectoire d&apos;outil qui entraînent une violation des distances de sécurité avec le corps et/ou le porte-outil sont supprimées.</p>
+<p><b>Éloigner</b>: la trajectoire d'outil s'écarte de la pièce usinée pour maintenir une distance de sécurité avec le corps et/ou le porte-outil.</p>
+<p>'''Détecter la longueur d'outil''': la longueur d'outil sortant du porte-outil est automatiquement allongée afin de maintenir la distance de sécurité spécifiée entre le corps et/ou le porte-outil et la pièce usinée. Un message indiquant la distance d'allongement de la sortie d'outil est consigné.</p>
+<p><b>Echec en cas de collision</b>: la trajectoire d'outil calculée est abandonnée et un message d'erreur apparaît lorsque la distance de sécurité n'est plus respectée.</p>
+</div>
