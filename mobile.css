@@ -1,43 +1,40 @@
 
-/* =========================================
-   SOODY — 수어 학습 모바일 화면
-   index.html 전체 대응 CSS
-========================================= */
-
 :root {
   --mint: #56c9ca;
   --text: #303030;
-  --muted: #999;
-  --border: #e7e7e7;
+  --muted: #999999;
 }
 
 * {
   box-sizing: border-box;
 }
 
-html {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  overflow: hidden;
-}
-
+html,
 body {
   width: 100%;
   height: 100%;
   margin: 0;
+  padding: 0;
   overflow: hidden;
+}
+
+body {
   background: #444;
   color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont,
-    "Apple SD Gothic Neo", "Malgun Gothic",
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Apple SD Gothic Neo",
+    "Malgun Gothic",
     sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-/* =========================================
-   앱 전체 프레임
-========================================= */
+button {
+  font-family: inherit;
+}
+
+/* 앱 프레임 */
 
 .app {
   position: relative;
@@ -51,13 +48,10 @@ body {
 
   margin: 0 auto;
   overflow: hidden;
-
-  background: #fff;
+  background: white;
 }
 
-/* =========================================
-   상단 튜터 영역
-========================================= */
+/* 상단 튜터 영역 */
 
 .learning-section {
   position: relative;
@@ -67,44 +61,25 @@ body {
   flex: 0 0 63%;
   min-height: 0;
   overflow: hidden;
-
-  background: #fff;
+  background: white;
 }
 
-/* 가상 상태바 */
-.status-bar {
-  flex-shrink: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* 진행률 */
 
-  width: 100%;
-  height: 45px;
-  padding: 5px 25px 0;
-
-  color: #111;
-  font-size: 15px;
-  font-weight: 700;
-}
-
-/* 상단 진행률 */
 .progress-header {
   flex-shrink: 0;
   display: flex;
   align-items: center;
   gap: 20px;
 
-  width: 100%;
-  height: 55px;
-  padding: 0 20px;
+  height: 65px;
+  padding: 12px 20px 0;
 }
 
-/* 닫기 버튼 */
 .close-button {
-  flex-shrink: 0;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
   width: 24px;
   height: 30px;
@@ -113,60 +88,48 @@ body {
   border: none;
   background: transparent;
 
-  color: #c9c9c9;
+  color: #c8c8c8;
   font-size: 28px;
   font-weight: 300;
-  line-height: 1;
   cursor: pointer;
 }
 
-/* 진행률 배경 */
 .progress-track {
-  position: relative;
   flex: 1;
   height: 4px;
+  overflow: hidden;
 
   border-radius: 999px;
   background: #dedede;
-  overflow: hidden;
 }
 
-/* 진행률 민트색 */
 .progress-fill {
   width: 33.333%;
   height: 100%;
-
   border-radius: inherit;
   background: var(--mint);
 }
 
-/* 1/3 표시 */
 .progress-count {
   flex-shrink: 0;
-  min-width: 25px;
-
   color: var(--muted);
   font-size: 12px;
-  text-align: right;
 }
 
 /* 학습 제목 */
+
 .learning-title {
   flex-shrink: 0;
-
   margin: 14px 16px 0;
 
-  color: var(--text);
   font-size: 18px;
   font-weight: 700;
   line-height: 1.5;
-  text-align: center;
   letter-spacing: -0.5px;
+  text-align: center;
 }
 
-/* =========================================
-   튜터 이미지 영역
-========================================= */
+/* 튜터 이미지 */
 
 .tutor-area {
   position: relative;
@@ -180,10 +143,8 @@ body {
   overflow: hidden;
 }
 
-/* 튜터 PNG */
 .tutor-image {
   display: block;
-
   width: auto;
   height: 92%;
   max-width: 100%;
@@ -192,7 +153,8 @@ body {
   object-position: center bottom;
 }
 
-/* 튜터 대사 카드 */
+/* 튜터 말풍선 */
+
 .tutor-message {
   position: absolute;
   z-index: 2;
@@ -202,72 +164,169 @@ body {
   bottom: 17px;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   min-height: 44px;
   padding: 10px 16px;
 
-  border: 1px solid var(--border);
+  border: 1px solid #e7e7e7;
   border-radius: 9px;
 
-  background: rgba(255, 255, 255, 0.96);
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.06);
+  background: rgba(255,255,255,0.96);
+  box-shadow: 0 1px 5px rgba(0,0,0,0.06);
 
-  color: #333;
   font-size: 16px;
   font-weight: 500;
   text-align: center;
 }
 
-/* 강조 문구 */
 .tutor-message strong {
   color: var(--mint);
   font-weight: 700;
 }
 
-/* =========================================
-   하단 실시간 카메라
-========================================= */
+/* 하단 카메라 */
 
 .camera-section {
   position: relative;
   flex: 1;
   min-height: 0;
-
   width: 100%;
   overflow: hidden;
-
-  background: #252525;
+  background: #222;
 }
 
-/* 실제 카메라 영상 */
-.camera-video {
+.camera-video,
+.hand-canvas {
   position: absolute;
   inset: 0;
 
   display: block;
   width: 100%;
   height: 100%;
+}
 
+.camera-video {
   object-fit: cover;
   transform: scaleX(-1);
 }
 
-/* MediaPipe 손 인식 캔버스 */
 .hand-canvas {
-  position: absolute;
-  inset: 0;
   z-index: 2;
-
-  display: block;
-  width: 100%;
-  height: 100%;
-
   pointer-events: none;
 }
 
-/* 아이폰 홈 인디케이터 */
+/* 카메라 시작 화면 */
+
+.camera-prompt {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+  background: #f3faf9;
+  text-align: center;
+}
+
+.camera-prompt-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.camera-icon {
+  font-size: 34px;
+  color: var(--mint);
+}
+
+.camera-prompt h2 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.camera-prompt p {
+  margin: 0;
+  color: #999;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.start-button {
+  min-width: 180px;
+  margin-top: 12px;
+  padding: 14px 22px;
+
+  border: none;
+  border-radius: 14px;
+
+  background: var(--mint);
+  color: white;
+
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.start-button:disabled {
+  opacity: 0.6;
+}
+
+/* 카메라 상태 */
+
+.camera-status {
+  position: absolute;
+  z-index: 4;
+
+  left: 50%;
+  bottom: 32px;
+
+  transform: translateX(-50%);
+
+  max-width: calc(100% - 32px);
+  padding: 8px 14px;
+
+  border-radius: 20px;
+  background: rgba(0,0,0,0.65);
+
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* 다시 시도하기 */
+
+.retry-button {
+  position: absolute;
+  z-index: 6;
+
+  right: 16px;
+  bottom: 74px;
+
+  padding: 10px 14px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: var(--mint);
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* 홈 인디케이터 */
+
 .home-indicator {
   position: absolute;
   z-index: 10;
@@ -279,22 +338,18 @@ body {
   height: 5px;
 
   transform: translateX(-50%);
-
   border-radius: 999px;
-  background: #fff;
+  background: white;
 }
 
-/* =========================================
-   데스크톱 미리보기
-========================================= */
+/* 데스크톱 미리보기 */
 
 @media (min-width: 431px) {
   body {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     min-height: 100dvh;
-    background: #444;
   }
 
   .app {
@@ -304,38 +359,29 @@ body {
   }
 }
 
-/* =========================================
-   실제 모바일 화면
-========================================= */
+/* 실제 모바일 */
 
 @media (max-width: 430px) {
   body {
-    background: #fff;
+    background: white;
   }
 
   .app {
     width: 100%;
     max-width: none;
-    height: 100dvh;
     border-radius: 0;
   }
 }
 
-/* =========================================
-   높이가 작은 휴대폰
-========================================= */
+/* 작은 화면 */
 
 @media (max-height: 740px) {
   .learning-section {
     flex-basis: 61%;
   }
 
-  .status-bar {
-    height: 38px;
-  }
-
   .progress-header {
-    height: 45px;
+    height: 50px;
   }
 
   .learning-title {
@@ -352,42 +398,4 @@ body {
     min-height: 40px;
     font-size: 14px;
   }
-}
-
-/* 가짜 아이폰 상태바 제거 */
-.status-bar {
-  display: none;
-}
-
-/* 진행률을 화면 최상단에 배치 */
-.progress-header {
-  height: 65px;
-  padding-top: 12px;
-}
-
-/* 하단 카메라 */
-.camera-section {
-  position: relative;
-  flex: 1;
-  min-height: 0;
-  overflow: hidden;
-  background: #222;
-}
-
-.camera-video,
-.hand-canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.camera-video {
-  object-fit: cover;
-  transform: scaleX(-1);
-}
-
-.hand-canvas {
-  z-index: 2;
-  pointer-events: none;
 }

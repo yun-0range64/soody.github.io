@@ -73,9 +73,10 @@
     </section>
 
     <!-- 하단 실시간 카메라 -->
-   <section class="camera-section" aria-label="수어 인식 카메라">
+  <section class="camera-section" aria-label="수어 인식 카메라">
+
   <video
-    id="cameraVideo"
+    id="video"
     class="camera-video"
     autoplay
     muted
@@ -83,11 +84,27 @@
   ></video>
 
   <canvas
-    id="handCanvas"
+    id="overlay"
     class="hand-canvas"
   ></canvas>
 
+  <div id="cameraPrompt" class="camera-prompt">
+    <p>카메라를 켜고 수어를 따라 해보세요.</p>
+    <button id="start" type="button">
+      카메라 시작하기
+    </button>
+  </div>
+
+  <div id="status" class="camera-status">
+    카메라 대기 중
+  </div>
+
+  <button id="retry" type="button" hidden>
+    다시 시도하기
+  </button>
+
   <div class="home-indicator"></div>
+
 </section>
 
   </main>
