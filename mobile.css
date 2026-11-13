@@ -1,57 +1,54 @@
 
-:root {
-  --mint: #56c9ca;
-  --text: #303030;
-  --muted: #999999;
-}
-
 * {
   box-sizing: border-box;
 }
 
 html,
 body {
+  margin: 0;
   width: 100%;
   height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
 }
 
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
   background: #444;
-  color: var(--text);
+
   font-family:
     -apple-system,
     BlinkMacSystemFont,
     "Apple SD Gothic Neo",
     "Malgun Gothic",
     sans-serif;
-  -webkit-font-smoothing: antialiased;
 }
 
-button {
+button,
+a {
   font-family: inherit;
 }
 
-/* 앱 프레임 */
+/* 전체 앱 */
 
 .app {
   position: relative;
   display: flex;
   flex-direction: column;
 
-  width: 100%;
-  max-width: 390px;
-  height: 100vh;
-  height: 100dvh;
+  width: 390px;
+  max-width: 100%;
+  height: 844px;
+  max-height: 100dvh;
 
-  margin: 0 auto;
   overflow: hidden;
+  border-radius: 42px;
   background: white;
 }
 
-/* 상단 튜터 영역 */
+/* 상단 학습 화면 */
 
 .learning-section {
   position: relative;
@@ -61,17 +58,18 @@ button {
   flex: 0 0 63%;
   min-height: 0;
   overflow: hidden;
+
   background: white;
 }
 
-/* 진행률 */
+/* 상단 진행률 */
 
 .progress-header {
-  flex-shrink: 0;
   display: flex;
   align-items: center;
   gap: 20px;
 
+  flex-shrink: 0;
   height: 65px;
   padding: 12px 20px 0;
 }
@@ -83,36 +81,31 @@ button {
 
   width: 24px;
   height: 30px;
-  padding: 0;
 
-  border: none;
-  background: transparent;
-
-  color: #c8c8c8;
+  color: #c6c6c6;
   font-size: 28px;
   font-weight: 300;
-  cursor: pointer;
+  text-decoration: none;
 }
 
 .progress-track {
   flex: 1;
   height: 4px;
-  overflow: hidden;
 
-  border-radius: 999px;
-  background: #dedede;
+  overflow: hidden;
+  border-radius: 99px;
+  background: #e1e1e1;
 }
 
 .progress-fill {
   width: 33.333%;
   height: 100%;
   border-radius: inherit;
-  background: var(--mint);
+  background: #58c9c8;
 }
 
 .progress-count {
-  flex-shrink: 0;
-  color: var(--muted);
+  color: #999;
   font-size: 12px;
 }
 
@@ -120,8 +113,10 @@ button {
 
 .learning-title {
   flex-shrink: 0;
+
   margin: 14px 16px 0;
 
+  color: #303030;
   font-size: 18px;
   font-weight: 700;
   line-height: 1.5;
@@ -129,22 +124,24 @@ button {
   text-align: center;
 }
 
-/* 튜터 이미지 */
+/* 튜터 */
 
 .tutor-area {
   position: relative;
   display: flex;
-  align-items: flex-end;
   justify-content: center;
+  align-items: flex-end;
 
   flex: 1;
   min-height: 0;
   width: 100%;
+
   overflow: hidden;
 }
 
 .tutor-image {
   display: block;
+
   width: auto;
   height: 92%;
   max-width: 100%;
@@ -157,7 +154,7 @@ button {
 
 .tutor-message {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
 
   left: 20px;
   right: 20px;
@@ -166,6 +163,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 4px;
 
   min-height: 44px;
   padding: 10px 16px;
@@ -173,163 +171,77 @@ button {
   border: 1px solid #e7e7e7;
   border-radius: 9px;
 
-  background: rgba(255,255,255,0.96);
-  box-shadow: 0 1px 5px rgba(0,0,0,0.06);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.06);
 
+  color: #333;
   font-size: 16px;
-  font-weight: 500;
   text-align: center;
 }
 
-.tutor-message strong {
-  color: var(--mint);
+.highlight {
+  color: #58c9c8;
   font-weight: 700;
 }
 
-/* 하단 카메라 */
+/* 하단 카메라 영역 */
 
 .camera-section {
   position: relative;
+
   flex: 1;
   min-height: 0;
   width: 100%;
+
   overflow: hidden;
   background: #222;
 }
 
-.camera-video,
-.hand-canvas {
+/* 원본 MediaPipe 카메라 영상 */
+
+#video {
   position: absolute;
   inset: 0;
 
   display: block;
   width: 100%;
   height: 100%;
-}
 
-.camera-video {
   object-fit: cover;
   transform: scaleX(-1);
 }
 
-.hand-canvas {
+/* 원본 p5.js 캔버스
+   mobile.js에서 camera-section 내부로 이동 */
+
+.camera-section canvas {
+  position: absolute !important;
+
+  top: 0 !important;
+  left: 0 !important;
+
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+
   z-index: 2;
+  transform: scaleX(-1);
+
   pointer-events: none;
+  background: transparent;
 }
 
-/* 카메라 시작 화면 */
+/* 원본 판정용 이미지: 화면에서는 숨김 */
 
-.camera-prompt {
-  position: absolute;
-  inset: 0;
-  z-index: 5;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 24px;
-  background: #f3faf9;
-  text-align: center;
+#red1 {
+  display: none;
 }
 
-.camera-prompt-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
-
-.camera-icon {
-  font-size: 34px;
-  color: var(--mint);
-}
-
-.camera-prompt h2 {
-  margin: 0;
-  font-size: 19px;
-  font-weight: 700;
-}
-
-.camera-prompt p {
-  margin: 0;
-  color: #999;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.start-button {
-  min-width: 180px;
-  margin-top: 12px;
-  padding: 14px 22px;
-
-  border: none;
-  border-radius: 14px;
-
-  background: var(--mint);
-  color: white;
-
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.start-button:disabled {
-  opacity: 0.6;
-}
-
-/* 카메라 상태 */
-
-.camera-status {
-  position: absolute;
-  z-index: 4;
-
-  left: 50%;
-  bottom: 32px;
-
-  transform: translateX(-50%);
-
-  max-width: calc(100% - 32px);
-  padding: 8px 14px;
-
-  border-radius: 20px;
-  background: rgba(0,0,0,0.65);
-
-  color: white;
-  font-size: 12px;
-  text-align: center;
-  white-space: nowrap;
-}
-
-/* 다시 시도하기 */
-
-.retry-button {
-  position: absolute;
-  z-index: 6;
-
-  right: 16px;
-  bottom: 74px;
-
-  padding: 10px 14px;
-
-  border: none;
-  border-radius: 10px;
-
-  background: var(--mint);
-  color: white;
-  font-size: 13px;
-  cursor: pointer;
-}
-
-[hidden] {
-  display: none !important;
-}
-
-/* 홈 인디케이터 */
+/* 하단 홈 인디케이터 */
 
 .home-indicator {
   position: absolute;
-  z-index: 10;
+  z-index: 5;
 
   left: 50%;
   bottom: 9px;
@@ -338,28 +250,78 @@ button {
   height: 5px;
 
   transform: translateX(-50%);
-  border-radius: 999px;
+  border-radius: 99px;
   background: white;
+
+  pointer-events: none;
 }
 
-/* 데스크톱 미리보기 */
+/* 원본 sketch.js가 표시하는 완료 화면 */
 
-@media (min-width: 431px) {
-  body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100dvh;
-  }
+.next-btn {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
 
-  .app {
-    width: 390px;
-    max-height: 844px;
-    border-radius: 42px;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.55);
+
+  visibility: hidden;
 }
 
-/* 실제 모바일 */
+.complete-panel {
+  width: 100%;
+  padding: 28px 20px;
+
+  border-radius: 20px;
+  background: white;
+  text-align: center;
+}
+
+.complete-panel h2 {
+  margin: 0 0 10px;
+
+  color: #303030;
+  font-size: 20px;
+}
+
+.complete-panel p {
+  margin: 0 0 24px;
+
+  color: #888;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.complete-panel button {
+  display: block;
+  width: 100%;
+
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#btn1 {
+  margin-bottom: 10px;
+  background: #58c9c8;
+  color: white;
+}
+
+#btn2 {
+  background: #f1f4f4;
+  color: #555;
+}
+
+/* 모바일 */
 
 @media (max-width: 430px) {
   body {
@@ -368,12 +330,11 @@ button {
 
   .app {
     width: 100%;
-    max-width: none;
+    height: 100dvh;
+    max-height: none;
     border-radius: 0;
   }
 }
-
-/* 작은 화면 */
 
 @media (max-height: 740px) {
   .learning-section {
@@ -391,11 +352,5 @@ button {
 
   .tutor-image {
     height: 90%;
-  }
-
-  .tutor-message {
-    bottom: 12px;
-    min-height: 40px;
-    font-size: 14px;
   }
 }

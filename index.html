@@ -2,50 +2,41 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-  />
-  <meta name="theme-color" content="#ffffff" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta
-    name="apple-mobile-web-app-status-bar-style"
-    content="default"
-  />
+  >
+  <meta name="theme-color" content="#ffffff">
 
   <title>SOODY | 수어 학습</title>
 
-  <link rel="stylesheet" href="./mobile.css" />
+  <link rel="stylesheet" href="./mobile.css">
+
+  <!-- 원본 프로젝트에서 사용하던 라이브러리 -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
 </head>
 
 <body>
   <main class="app">
 
-    <!-- 상단 학습 영역 -->
+    <!-- 상단 튜터 영역 -->
     <section class="learning-section">
 
-      <!-- 앱 내부 상태바 -->
-      <div class="status-bar" aria-hidden="true">
-        <span>9:41</span>
-        <span>●  Wi-Fi  ▰</span>
-      </div>
-
-      <!-- 진행률 -->
       <header class="progress-header">
-        <button
+        <a
           class="close-button"
-          type="button"
+          href="./main.html"
           aria-label="학습 종료"
-        >×</button>
+        >×</a>
 
-        <div
-          class="progress-track"
-          role="progressbar"
-          aria-valuemin="0"
-          aria-valuemax="3"
-          aria-valuenow="1"
-        >
+        <div class="progress-track">
           <div class="progress-fill"></div>
         </div>
 
@@ -56,61 +47,66 @@
         새로운 수어를 배워볼까요?
       </h1>
 
-      <!-- 튜터 -->
       <div class="tutor-area">
         <img
           class="tutor-image"
           src="./assets/sign-tutor.png"
           alt="수어 동작을 보여주는 튜터"
-        />
+        >
 
         <div class="tutor-message">
-          <span>
-            <strong>만나서</strong> 반갑습니다.
-          </span>
+          <span class="highlight">만나서</span>
+          반갑습니다.
         </div>
       </div>
+
     </section>
 
-    <!-- 하단 실시간 카메라 -->
-  <section class="camera-section" aria-label="수어 인식 카메라">
+    <!-- 원본 카메라 영상이 들어갈 영역 -->
+    <section class="camera-section" id="cameraSection">
 
-  <video
-    id="video"
-    class="camera-video"
-    autoplay
-    muted
-    playsinline
-  ></video>
+      <!-- 원본 index.js가 사용하는 video ID 유지 -->
+      <video
+        id="video"
+        autoplay
+        muted
+        playsinline
+      ></video>
 
-  <canvas
-    id="overlay"
-    class="hand-canvas"
-  ></canvas>
+      <!-- 원본 sketch.js가 사용하는 요소 유지 -->
+      <img
+        id="red1"
+        src="./images/red1.png"
+        alt=""
+        hidden
+      >
 
-  <div id="cameraPrompt" class="camera-prompt">
-    <p>카메라를 켜고 수어를 따라 해보세요.</p>
-    <button id="start" type="button">
-      카메라 시작하기
-    </button>
-  </div>
+      <div class="home-indicator"></div>
+    </section>
 
-  <div id="status" class="camera-status">
-    카메라 대기 중
-  </div>
+    <!-- 원본 sketch.js의 완료 처리와 연결 -->
+    <div class="next-btn">
+      <div class="complete-panel">
+        <h2>수어 동작을 인식했어요!</h2>
+        <p>잘했어요! 다음 단계로 넘어가 볼까요?</p>
 
-  <button id="retry" type="button" hidden>
-    다시 시도하기
-  </button>
+        <button id="btn1" type="button">
+          다음 단계로 넘어가기
+        </button>
 
-  <div class="home-indicator"></div>
-
-</section>
+        <button id="btn2" type="button">
+          다시 연습하기
+        </button>
+      </div>
+    </div>
 
   </main>
-<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
-<script src="./mobile.js"></script>
-<script src="./sketch.js"></script>
+
+  <!-- 기존 카메라 및 수어 인식 코드: 그대로 연결 -->
+  <script src="./index.js"></script>
+  <script src="./sketch.js"></script>
+
+  <!-- 캔버스 배치만 담당 -->
+  <script src="./mobile.js"></script>
 </body>
 </html>
