@@ -73,26 +73,27 @@
     </section>
 
     <!-- 하단 실시간 카메라 -->
-    <section class="camera-section" aria-label="수어 연습 카메라">
+   <section class="camera-section" aria-label="수어 인식 카메라">
+  <video
+    id="cameraVideo"
+    class="camera-video"
+    autoplay
+    muted
+    playsinline
+  ></video>
 
-      <video
-        id="cameraVideo"
-        class="camera-video"
-        autoplay
-        muted
-        playsinline
-      ></video>
+  <canvas
+    id="handCanvas"
+    class="hand-canvas"
+  ></canvas>
 
-      <canvas
-        id="handCanvas"
-        class="hand-canvas"
-      ></canvas>
-
-      <div class="home-indicator" aria-hidden="true"></div>
-    </section>
+  <div class="home-indicator"></div>
+</section>
 
   </main>
-
-  <script src="./mobile.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+<script src="./mobile.js"></script>
+<script src="./sketch.js"></script>
 </body>
 </html>
