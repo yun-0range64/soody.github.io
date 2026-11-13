@@ -18,3 +18,35 @@ function onResults(results){
 }
 async function start(){try{setStatus('카메라 연결 중…');document.getElementById('start').disabled=true;if(!window.Hands||!window.Camera)throw Error('MediaPipe 라이브러리를 불러오지 못했습니다. 인터넷 연결을 확인해주세요.');hands=new Hands({locateFile:file=>`https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`});hands.setOptions({maxNumHands:2,modelComplexity:1,minDetectionConfidence:.8,minTrackingConfidence:.5});hands.onResults(onResults);camera=new Camera(video,{onFrame:async()=>{if(processing)return;processing=true;try{await hands.send({image:video})}finally{processing=false}},width:640,height:480,facingMode:'user'});await camera.start();prompt.hidden=true;prompt.style.display='none';setStatus('손을 카메라 안에 보여주세요')}catch(e){document.getElementById('start').disabled=false;setStatus('카메라를 사용할 수 없어요');prompt.querySelector('p').textContent=e.message||'카메라 권한과 HTTPS 연결을 확인해주세요.';}}
 document.getElementById('start').addEventListener('click',start);retry.addEventListener('click',()=>{done=false;matchedFrames=0;retry.hidden=true;setStatus('다시 따라 해보세요')});document.getElementById('back').addEventListener('click',()=>{if(history.length>1)history.back()});
+
+
+
+/* SOODY 카메라 연결 */
+
+async function startSoodyCamera() {
+  const video = document.getElementById("cameraVideo");
+
+  if (!video) return;
+
+  // 이미 카메라가 연결되어 있으면 중복 실행하지 않음
+  if (video.srcObject) return;
+
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({
+      audio: false,
+      video: {
+        facingMode: "user"
+      }
+    });
+
+    video.srcObject = stream;
+    await video.play();
+
+  } catch (error) {
+    console.error("카메라 연결 실패:", error);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  startSoodyCamera();
+});
